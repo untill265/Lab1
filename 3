@@ -1,0 +1,32 @@
+namespace laba1._3
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            double a = 10e2f;
+            float b1 = 10e-5f;
+            double b2 = 10e-5;
+            float c1 = (float)Math.Pow(a - b1, 3); //(a-b)^3
+            float d1 = (float)Math.Pow(a, 3); //a^3
+            float e1 = (float)Math.Pow(a, 2);   //a^2
+            float f1 = (float)(3 * e1 * b1);      //3a^2b
+            float g1 = (float)Math.Pow(b1, 2);    //b^2
+            float h1 = (float)(3 * a * g1);    //3ab^2
+            float i1 = (float)Math.Pow(b1, 3);   //b^3
+            float result1 = (float)(c1 - (d1 + h1)) /(-f1 - i1);
+            Console.WriteLine($"a = {a} , b = {b1} , (a-b)^3 = {c1} , a^3 = {d1} , a^2 = {e1} , b^2 = {g1} , b^3 = {i1}");
+            Console.WriteLine($"Результат выражения = {result1}");
+            double c2 = Math.Pow(a - b1, 3); //(a-b)^3
+            double d2 = Math.Pow(a, 3); //a^3
+            double e2 = Math.Pow(a, 2);   //a^2
+            double f2 = 3 * e2 * b2;      //3a^2b
+            double g2 = Math.Pow(b2, 2);    //b^2
+            double h2 = 3 * a * g2;    //3ab^2
+            double i2 = Math.Pow(b2, 3);   //b^3
+            double result2 = (c2 - (d2 + h2)) / (-f2 - i2);
+            Console.WriteLine($"a = {a} , b = {b2} , (a-b)^3 = {c2} , a^3 = {d2} , a^2 = {e2} , b^2 = {g2} , b^3 = {i2}");
+            Console.WriteLine($"Результат выражения = {result2}");  
+        }
+    }
+}
