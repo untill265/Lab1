@@ -1,0 +1,37 @@
+namespace laba_1_2
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            double x, y;
+            string strokax, strokay;
+            bool isconvertx, isconverty;
+            do
+            {
+                Console.WriteLine("Введите координаты x:");
+                strokax = Console.ReadLine();
+                isconvertx = double.TryParse(strokax, out x);
+                if (!isconvertx)
+                {
+                    Console.WriteLine("Вы ввели не число");
+                }
+            }
+            while (!isconvertx);
+            do
+            {
+                Console.WriteLine("Введите координаты y:");
+                strokay = Console.ReadLine();
+                isconverty = double.TryParse(strokay, out y);
+                if (!isconverty)
+                {
+                    Console.WriteLine("Вы ввели не число");
+                }
+            }
+            while (!isconverty);
+            bool prinadlegit = (Math.Pow(x, 2) + Math.Pow(y, 2) <= 1 & y <= 0);
+            Console.WriteLine(prinadlegit);
+        }
+
+    }
+}
